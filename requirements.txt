@@ -1,0 +1,27 @@
+# Core dependencies
+torch>=2.0.0
+torch-geometric>=2.5.0
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+
+# Data processing
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+umap-learn
+scikit-learn
+
+# Geospatial (for maps/plots)
+geopandas
+shapely
+contextily
+cartopy
+
+# Utilities
+tqdm
+pyyaml
