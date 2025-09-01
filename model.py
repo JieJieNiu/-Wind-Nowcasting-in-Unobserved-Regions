@@ -3,7 +3,7 @@
 """
 Created on Sun Jun 29 09:45:19 2025
 
-@author: jolie
+@author: Jie
 """
 
 import torch
