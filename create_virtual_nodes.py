@@ -3,7 +3,7 @@
 """
 Created on Tue Apr  1 16:07:22 2025
 
-@author: jolie
+@author: Jie
 """
 from geopy.distance import geodesic
 from shapely.geometry import Polygon
