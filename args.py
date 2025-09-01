@@ -82,7 +82,6 @@ enable_multi_step=False
 enable_multi_step_moco=False
 enable_augmented=False
 enable_augmented_moco=True
-enable_diffusion=False
 QUEUE_SIZE = 512
 MODEL_NAME="Augmented_moco"
 
