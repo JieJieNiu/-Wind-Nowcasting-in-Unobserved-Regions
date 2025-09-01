@@ -14,11 +14,13 @@ DEFAULT_DIR=os.getcwd()
 
 """Raw data directory and model directory"""
 
-DATA_DIR = DEFAULT_DIR + os.path.sep + '34station_data_a' + os.path.sep  ##where the orignal data is saved
+DATA_DIR = DEFAULT_DIR + os.path.sep + 'station_data' + os.path.sep  ##where the orignal data is saved
+TEST_DATA_DIR= DEFAULT_DIR + os.path.sep + 'test_data' + os.path.sep
 INFO_PATH=DEFAULT_DIR + os.path.sep + 'info'       ##where the station information csv saved
 SAVE_PATH=DEFAULT_DIR + os.path.sep +'model_save' ##where trained model saved
 DATA_SAVE_PATH=DEFAULT_DIR + os.path.sep +'data_save' ##where the processed data is saved
-RESUME_PATH=DEFAULT_DIR +os.path.sep + 'model_save' +os.path.sep + 'best_model_epoch67.pt' ##if need resume
+RESUME_PATH=DEFAULT_DIR +os.path.sep + 'model_save' +os.path.sep + 'model_epoch200.pt' ##if need resume
+
 
 """Stations Info"""
 
@@ -31,7 +33,8 @@ TEST_STATIONS = df[df['test'] == 1][['station_id', 'station_name', 'latitude', '
 
 START_TIME=pd.to_datetime("2022-12-10 23:30:00") 
 END_TIME=pd.to_datetime("2025-04-08 12:40:00")
-
+START_IDX=0
+END_IDX=None
 
 """MAP Grid"""
 GRID_ROW=9 
@@ -56,15 +59,14 @@ weight_config={
 
 """GNN"""
 BATCH_SIZE=32
-EPOCHS=230
-LR=1e-2
-PATIENCE=20 #Early stop
+EPOCHS=200
+LR=1e-3
+PATIENCE=10 #Early stop
 WARMUP_EPOCH=20 #Contrastive loss warmup epochs
 
 """MSE Loss"""
-DD_WEIGHT=80 
-CL_ALPHA = 0.1
-CL_MAE_THRESHOLD = 20.0
+CL_ALPHA = 10
+CL_MAE_THRESHOLD = 2
 
 """Contrastive learning"""
 CL_WEIGHT = 2
@@ -75,15 +77,13 @@ MOCO_WEIGHT=1
 MOCO_DELTA=3
 TEMPERATURE=1
 MASK_RATIO=0.3
-enable_contrastive=True ##if don't use contrastive, choose false
+enable_contrastive=True##if don't use contrastive, choose false
 enable_multi_step=False
 enable_multi_step_moco=False
 enable_augmented=False
 enable_augmented_moco=True
 enable_diffusion=False
 QUEUE_SIZE = 512
-MODEL_NAME="Augmented_moco_all"
+MODEL_NAME="Augmented_moco"
 
 TAG="expertient_results"
-
-
