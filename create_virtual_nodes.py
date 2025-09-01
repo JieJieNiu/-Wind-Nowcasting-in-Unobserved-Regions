@@ -121,7 +121,7 @@ def generate_virtual_nodes(row, col, real_stations, test_stations):
 
     nodes_df = pd.DataFrame(nodes)
 
-    # ===  Add calculation of the nearest real node distance ===
+    #  Add calculation of the nearest real node distance ===
     real_df = nodes_df[~nodes_df['station_name'].str.contains('virtual_node')].copy()
     distance_list = []
     for _, row in nodes_df.iterrows():
@@ -199,9 +199,9 @@ def plot_graph(nodes_df, edges, figsize=(12, 10)):
     for idx, row in nodes_df.iterrows():
         pos[idx] = (row['longitude'], row['latitude'])
         if 'virtual_node' in row['station_name']:
-            color_map.append('orange')  # virtual node
+            color_map.append('orange')  # 
         else:
-            color_map.append('skyblue')  # real node
+            color_map.append('skyblue')  # 
         G.add_node(idx)
 
     # add edge

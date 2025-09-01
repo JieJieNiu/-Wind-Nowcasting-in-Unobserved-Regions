@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -68,7 +69,7 @@ def apply_lcc_to_datalist(data_list):
         ratio = len(lcc) / data.num_nodes
         stats.append(ratio)
 
-    print("\n LCC：")
+    print("\ LCC：")
     print(f"  avg remain rate: {np.mean(stats):.4f}")
     print(f"  min remain rate: {np.min(stats):.4f}")
     print(f"  max remain rate: {np.max(stats):.4f}")
@@ -167,7 +168,7 @@ def apply_diffusion_to_datalist(data_list, method=args.DIFFUSION_METHOD, alpha=a
 
 def generate_multi_diffusion_graphs(graph_seq, alpha=args.ALPHA, t=args.t, k=args.k, weight_config=args.weight_config):
     """
-    For the original graph sequence, two diffusion versions are generated: PPR and Heat
+
     """
     graphs_ppr = apply_diffusion_to_datalist(
         graph_seq,
@@ -213,3 +214,9 @@ class TemporalGraphDataset(InMemoryDataset):
         target_graphs = sequence[self.input_len:]    # prediction
 
         return input_graphs, target_graphs
+
+
+def custom_collate_fn(batch):
+    seqs, _ = zip(*batch)
+    seqs = [list(seq) for seq in seqs]
+    return seqs, None
