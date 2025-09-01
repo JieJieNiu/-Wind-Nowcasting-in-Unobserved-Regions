@@ -6,7 +6,7 @@
 """
 Created on Tue Apr 29 13:40:13 2025
 
-@author: jolie
+@author: Jie
 """
 
 import torch
