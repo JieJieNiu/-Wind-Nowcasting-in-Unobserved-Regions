@@ -84,7 +84,9 @@ python evaluate.py
   <img src="graphs/leadtime.png" width="300"/>
 </p>
 
-![Error map](graphs/station_error.png)
+<p align="center">
+  <img src="graphs/station_error.png" alt="Error map" width="600">
+</p>
 
 
 ## 📜 Citation
