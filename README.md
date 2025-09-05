@@ -25,6 +25,9 @@ pip install -r requirements.txt
 .
 ├── info/ 
 │   └── station_info.csv   # Metadata of weather stations
+├── trained_models/ 
+│   └── augmented_moco   # Augmented_moco trained model
+│   └── multi_step_moco   # Multi_step_moco trained model
 ├── creat_virtual_nodes.py #creat grid and virtual nodes
 ├── GDC_data.py  # creat diffusion graph
 ├── cache_diffused_graphs.py #diffusion graph data save to path
