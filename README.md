@@ -21,6 +21,7 @@ pip install -r requirements.txt
 
 
 ##  Project Structure
+```
 .
 ├── info/                          # Metadata directory
 │   └── station_info.csv           # Weather station information
