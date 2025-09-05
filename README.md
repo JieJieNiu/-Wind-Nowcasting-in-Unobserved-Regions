@@ -69,7 +69,7 @@ python test.py --args.MODEL_NAME w/o contrastive&diffusion
 
 ---
 
-## 📊 Evaluation Protocol
+##  Evaluation
 - **Stations**: 8 held-out stations (not used in training)  
 - **Metrics**:  
   - MAE / RMSE for wind speed (ff) and wind gust (gff)  
@@ -78,9 +78,13 @@ python test.py --args.MODEL_NAME w/o contrastive&diffusion
 python evaluate.py
 ```
 ---
+## Results
+<p align="center">
+  <img src="graphs/maermse.png" width="300"/>
+  <img src="graphs/leadtime.png" width="300"/>
+</p>
 
-
-
+![Error map](graphs/station_error.png)
 
 
 ## 📜 Citation
