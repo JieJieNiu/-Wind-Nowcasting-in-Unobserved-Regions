@@ -3,7 +3,7 @@
 ##  Introduction
 **ContraVirt** is a framework for **wind forecasting in regions without meteorological stations**.  
 It integrates **real stations** with **virtual nodes** (representing unobserved locations) and combines **graph diffusion**, **contrastive learning**, and **multi-step forecasting**.
-
+!{[ContraVirt procedure](graphs/process.png)
 ---
 
 ##  Installation
@@ -72,6 +72,9 @@ python test.py --args.MODEL_NAME w/o contrastive&diffusion
 python evaluate.py
 ```
 ---
+
+
+
 
 
 ## 📜 Citation
