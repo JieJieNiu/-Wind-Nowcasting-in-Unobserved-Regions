@@ -4,7 +4,12 @@
 **ContraVirt** is a framework for **wind forecasting in regions without meteorological stations**.  
 It integrates **real stations** with **virtual nodes** (representing unobserved locations) and combines **graph diffusion**, **contrastive learning**, and **multi-step forecasting**.
 ![ContraVirt procedure](graphs/process.png)
-![The virtual and real station map](graphs/stations.png)(graphs/train.png)(graphs/test.png)
+**The virtual and real station map**
+<p align="center">
+  <img src="graphs/stations.png" width="200"/>
+  <img src="graphs/train.png" width="200"/>
+  <img src="graphs/test.png" width="200"/>
+</p>
 ---
 
 ##  Installation
