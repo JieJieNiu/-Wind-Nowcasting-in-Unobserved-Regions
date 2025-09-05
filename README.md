@@ -23,10 +23,10 @@ pip install -r requirements.txt
 ##  Project Structure
 ```
 .
-├── info/                          # Metadata directory
+├── info/                        
 │   └── station_info.csv           # Weather station information
 
-├── trained_models/                # Pre-trained models
+├── trained_models/                # Trained models
 │   ├── augmented_moco/            # Augmented MoCo model
 │   └── multi_step_moco/           # Multi-step MoCo model
 
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ├── GDC_data.py                    # Build diffusion graph
 ├── cache_diffused_graphs.py       # Cache and save diffusion graphs
 ├── CL_loss.py                     # Contrastive learning loss
-├── model.py                       # ContraVirt model definition
+├── model.py                       # ContraVirt model
 ├── train.py                       # Training script
 ├── test.py                        # Testing script (save predictions)
 ├── evaluation.py                  # Evaluate predictions vs. ground truth
