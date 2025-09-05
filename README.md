@@ -25,10 +25,10 @@ pip install -r requirements.txt
 ```
 .
 ├── info/ 
-│   └── station_info.csv   # Metadata of weather stations
+│   ├── station_info.csv   # Metadata of weather stations
 ├── trained_models/ 
-│   └── augmented_moco   # Augmented_moco trained model
-│   └── multi_step_moco   # Multi_step_moco trained model
+│   ├── augmented_moco   # Augmented_moco trained model
+│   ├── multi_step_moco   # Multi_step_moco trained model
 ├── creat_virtual_nodes.py #creat grid and virtual nodes
 ├── GDC_data.py  # creat diffusion graph
 ├── cache_diffused_graphs.py #diffusion graph data save to path
@@ -38,8 +38,8 @@ pip install -r requirements.txt
 ├── test.py                # test script, save to prediction results to the path
 ├── args.py                
 ├── evaluation.py       # evaluate models prediction from test.py with ground truth
-└── README.md              # Project documentation
-└──requirements.txt            
+├── README.md              # Project documentation
+├──requirements.txt            
 .
 ```
 ---
