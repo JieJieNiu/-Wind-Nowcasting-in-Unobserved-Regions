@@ -14,8 +14,9 @@ It integrates **real stations** with **virtual nodes** (representing unobserved 
 
 ##  Installation
 ```bash
-git clone https://github.com/JieJieNiu/-Wind-Nowcasting-in-Unobserved-Regions.git
+git clone https://github.com/JieJieNiu/-Wind-nocasting-in Unobserved-Regions.git
 pip install -r requirements.txt
+```
 ```
 ---
 
