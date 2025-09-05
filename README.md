@@ -17,12 +17,10 @@ It integrates **real stations** with **virtual nodes** (representing unobserved 
 git clone https://github.com/JieJieNiu/-Wind-nocasting-in Unobserved-Regions.git
 pip install -r requirements.txt
 ```
-```
 ---
 
 
-## 📂 Project Structure
-```bash
+##  Project Structure
 .
 ├── info/                          # Metadata directory
 │   └── station_info.csv           # Weather station information
@@ -43,7 +41,7 @@ pip install -r requirements.txt
 ├── requirements.txt               # Project dependencies
 └── README.md                      # Project documentation
 ```
-
+---
 ##  Usage
 
 ### 1. Preprocess dataset
