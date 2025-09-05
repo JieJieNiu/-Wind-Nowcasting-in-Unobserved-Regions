@@ -11,71 +11,54 @@ It integrates **real stations** with **virtual nodes** (representing unobserved 
 git clone https://github.com/JieJieNiu/-Wind-Nowcasting-in-Unobserved-Regions.git
 pip install -r requirements.txt
 ```
-
 ---
-
 
 
 ## 📂 Project Structure
 ```
 .
-├── data/                  # KNMI dataset + processed graphs
-│   ├── raw/               # Original CSV files
-│   ├── processed/         # Graph tensors (graph_seq.pt, nodes_df.csv)
+├── info/ 
 │   └── station_info.csv   # Metadata of weather stations
-├── models/                # Model architectures
-│   ├── temporal_gcn.py
-│   ├── moco_module.py
-│   └── ...
+├── creat_virtual_nodes.py #creat grid and virtual nodes
+├── GDC_data.py  # creat diffusion graph
+├── cache_diffused_graphs.py #diffusion graph data save to path
+├── CL_loss.py  #contrastive loss
+├── model.py     # ContraVirt model     
 ├── train.py          # Training script
-├── test.py                # test script
+├── test.py                # test script, save to prediction results to the path
 ├── args.py                
-├── evaluation.py       # Plotting scripts (seasonal maps, embeddings)
+├── evaluation.py       # evaluate models prediction from test.py with ground truth
 └── README.md              # Project documentation
+└──requirements.txt            
 
----
-## Usage
-### Train model
-```bash
-python train.py --args.MODEL_NAME Multi_step_MoCo --args.enable_multi_step_moco = True --epochs 200 --batch_size 32
-python train.py --args.MODEL_NAME Augmented_MoCo --args.enable_augmented_moco = True --epochs 200 --batch_size 32
-python train.py --args.MODEL_NAME Multi_step --args.enable_multi_step= True --epochs 200 --batch_size 32
-python train.py --args.MODEL_NAME Augmented --args.enable_augmented = True --epochs 200 --batch_size 32
-python train.py --args.MODEL_NAME w/o contrastive --args.enable_contrastive = False --epochs 200 --batch_size 32
-python train.py --args.MODEL_NAME w/o contrastive&diffusion --args.DIFFUSION_METHOD="raw" --args.enable_contrastive = False --epochs 200 --batch_size 32
-
-```
-
-### Test
-```bash
-python test.py --args.MODEL_NAME Multi_step_MoCo 
-python test.py --args.MODEL_NAME Augmented_MoCo
-python test.py --args.MODEL_NAME Multi_step 
-python test.py --args.MODEL_NAME Augmented
-python test.py --args.MODEL_NAME w/o contrastive
-python test.py --args.MODEL_NAME w/o contrastive&diffusion
 ```
 ---
 
-### Evaluation
-
-
-
-## 🏃 Usage
+##  Usage
 
 ### 1. Preprocess dataset
 ```bash
-python create_dataset.py --data_dir ./data
+python cache_diffused_graphs.py --data_dir ./data --args.args.DIFFUSION_METHOD="ppr"
 ```
 
 ### 2. Train a model
 ```bash
-python train_loop.py --model Multi_step_MoCo --epochs 200 --batch_size 32
+python train_loop.py --model Multi_step_MoCo --args.enable_multi_step_moco = True --epochs 200 --batch_size 32
+python train_loop.py --model Augmented_MoCo --args.enable_augmented_moco = True --epochs 200 --batch_size 32
+python train_loop.py --model Multi_step --args.enable_multi_step = True --epochs 200 --batch_size 32
+python train_loop.py --model Augmented --args.enable_augmented = True --epochs 200 --batch_size 32
+python train_loop.py --model w/o contrastive --args.enable_contrastive = False --epochs 200 --batch_size 32
+python train_loop.py --model w/o contrastive&diffusion --args.DIFFUSION_METHOD="raw" --args.enable_contrastive = False --epochs 200 --batch_size 32
 ```
 
-### 3. Evaluate on test stations
+### 3. Prediction on test stations
 ```bash
-python test.py --model Multi_step_MoCo --output_dir ./results
+python test.py --model Multi_step_MoCo
+python test.py --args.MODEL_NAME Augmented_MoCo 
+python test.py --args.MODEL_NAME Multi_step 
+python test.py --args.MODEL_NAME Augmented
+python test.py --args.MODEL_NAME w/o contrastive
+python test.py --args.MODEL_NAME w/o contrastive&diffusion
 ```
 
 ---
@@ -84,17 +67,11 @@ python test.py --model Multi_step_MoCo --output_dir ./results
 - **Stations**: 8 held-out stations (not used in training)  
 - **Metrics**:  
   - MAE / RMSE for wind speed (ff) and wind gust (gff)  
-  - Angular MAE / RMSE for wind direction (dd)  
-- **Baselines**:  
-  - Auto-regression (AR)  
-  - Linear regression (LR)  
-  - KNN interpolation  
-  - Inverse distance weighting (IDW)  
-
+  - Angular MAE / RMSE for wind direction (dd) 
+```bash
+python evaluate.py
+```
 ---
-
-
-
 
 
 ## 📜 Citation
