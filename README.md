@@ -91,6 +91,8 @@ python evaluate.py
   <img src="graphs/station_error.png" alt="Error map" width="600">
 </p>
 
+## 📜 Citation
+For the processed dataset we use, please contact s.mehrkanoon@uu.nl for further information.
 
 ## 📜 Citation
 If you use this code, please cite:
