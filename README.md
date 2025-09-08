@@ -91,10 +91,10 @@ python evaluate.py
   <img src="graphs/station_error.png" alt="Error map" width="600">
 </p>
 
-## 📜 Citation
+## Dataset
 For requesting the processed dataset we use, please contact s.mehrkanoon@uu.nl for further information.
 
-## 📜 Citation
+## Citation
 If you use this code, please cite:
 ```bibtex
 
