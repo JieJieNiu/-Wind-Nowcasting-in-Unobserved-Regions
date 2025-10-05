@@ -95,7 +95,7 @@ python evaluate.py
 For requesting the processed dataset we use, please contact s.mehrkanoon@uu.nl for further information.
 
 ## Citation
-If you use this code, please cite:
+If you use this code, please cite
 ```bibtex
 
 ```
