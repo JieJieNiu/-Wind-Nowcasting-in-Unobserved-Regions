@@ -88,7 +88,7 @@ python evaluate.py
 </p>
 
 <p align="center">
-  <img src="graphs/station_error.png" alt="Error map" width="600">
+  <img src="graphs/station_error.png"  width="600">
 </p>
 
 ## Dataset
