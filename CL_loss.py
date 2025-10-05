@@ -88,13 +88,11 @@ def multi_step_contrastive_loss(z_t_all_list, z_tp1_all_list, virtual_to_real_ma
 # ======== Augmented_contrstive loss ========
 def augmentation_contrastive_loss(model, original_seq, augmented_seq, temperature=0.1, step_idx=0):
     """
-    高效版本：只对每个 batch 中第一个图做对比学习，降低计算量。
     """
     
     z1 = torch.relu(model.gcn_layers[0](original_seq.x, original_seq.edge_index, edge_weight=original_seq.edge_attr.squeeze()))
     z2 = torch.relu(model.gcn_layers[0](augmented_seq.x, augmented_seq.edge_index, edge_weight=augmented_seq.edge_attr.squeeze()))
 
-    # 归一化
     z1 = safe_normalize(z1)
     z2 = safe_normalize(z2)
 
