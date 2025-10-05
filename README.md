@@ -8,7 +8,7 @@ It integrates **real stations** with **virtual nodes** (representing unobserved 
 <p align="center">
   <img src="graphs/stations.png" width="200"/>
   <img src="graphs/train.png" width="200"/>
-  <img src="graphs/test.png" width="200"/>
+  <img src="graphs/test.png" width="200"/> 
 </p>
 ---
 
