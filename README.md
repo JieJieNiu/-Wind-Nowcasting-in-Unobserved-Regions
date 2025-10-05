@@ -82,7 +82,7 @@ python evaluate.py
 ```
 ---
 ## Results
-<p align="center">
+<p align="center"> 
   <img src="graphs/maermse.png" width="300"/>
   <img src="graphs/leadtime.png" width="300"/>
 </p>
