@@ -83,12 +83,12 @@ python evaluate.py
 ---
 ## Results
 <p align="center"> 
-  <img src="graphs/maermse.png" width="300"/>
-  <img src="graphs/leadtime.png" width="300"/>
+  <img src="graphs/mae.png" width="300"/>
+  <img src="graphs/leadtimes.png" width="300"/>
 </p>
 
 <p align="center">
-  <img src="graphs/station_error.png"  width="600">
+  <img src="graphs/station_errors.png"  width="600">
 </p>
 
 ## Dataset
