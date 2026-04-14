@@ -96,7 +96,16 @@ For requesting the processed dataset we use, please contact s.mehrkanoon@uu.nl f
 
 ## Citation
 If you use this code, please cite
-```bibtex
+```
+@misc{shi2026diffusioncontrastivegraphneuralnetwork,
+      title={A Diffusion-Contrastive Graph Neural Network with Virtual Nodes for Wind Nowcasting in Unobserved Regions}, 
+      author={Jie Shi and Siamak Mehrkanoon},
+      year={2026},
+      eprint={2604.10328},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2604.10328}, 
+}
 
 ```
 
